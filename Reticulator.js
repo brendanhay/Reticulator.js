@@ -4,6 +4,7 @@
 
 define(function () {
 
+    // Set your prefix, and list of phrases for each collection here
     var nonsense = {
         loading: {
             prefix: 'Please wait .. ',
@@ -54,6 +55,7 @@ define(function () {
         }
     };
 
+    // Generator instance for a specific collection of phrases
     function Generator(collection) {
         var previous = -1,
             prefix = collection.prefix,
@@ -63,9 +65,11 @@ define(function () {
         return function () {
             var current;
 
+            // Ensure we don't return the same phrase twice
             while (previous === (current = Math.floor(Math.random() * length)))
                 ;
 
+            // Prepend the prefix
             return prefix + phrases[previous = current];
         };
     };
@@ -75,7 +79,7 @@ define(function () {
         this.success = new Generator(nonsense.success);
         this.error = new Generator(nonsense.error);
     }
-
+    
     return new Recitulator;
 
 });
