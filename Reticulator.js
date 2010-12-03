@@ -1,4 +1,4 @@
-//     Reticulator.js 0.0.1
+﻿//     Reticulator.js 0.0.1
 //     (c) 2010 Brendan Hay
 //     Reticulator may be freely distributed under the MIT license.
 
@@ -63,7 +63,7 @@ define(function () {
         return function () {
             var current;
 
-            while (previous === (current = Math.floor(Math.random() * length))) { 
+            while (previous === (current = Math.floor(Math.random() * length))) {
                 /* NOOP */
             }
 
@@ -77,6 +77,6 @@ define(function () {
         this.error = new Generator(nonsense.error);
     }
 
-    return new Recitulator;
+    window.reticulator = new Recitulator;
 
 });
